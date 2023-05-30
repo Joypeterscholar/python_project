@@ -25,20 +25,28 @@
 # multiplication_table(start,stop)
 
 
-# def percent_of_interest(amt, yrs):
-#     rate_of_interest = 0.05
-#     # for yr in range(1, yrs + 1):
-#     yr = 1
-#     while (yr < yrs+1):
-#         roi = amt * rate_of_interest
-#         amt += roi
-#         print(f"year {yr} return on investment is {roi}, your principal is now {amt}")
-#         yr += 1
-#
-#
-# amt = int(input("Enter amount you want to invest: "))
-# yrs = int(input("Enter the number of years: "))
-# percent_of_interest(amt, yrs)
+def percent_of_interest(amt, yrs):
+    rate_of_interest = 0.05
+
+    # for yr in range(1, yrs + 1):
+    yr = 1
+    try:
+        while (yr < yrs+1):
+            roi = amt * rate_of_interest
+            amt += roi
+            print(f"year {yr} return on investment is {roi}, your principal is now {amt}")
+            yr += 1
+    except TypeError:
+        print("The amount cannot be a string")
+    except ValueError:
+        return "The value cannot be negative"
+
+
+
+
+amt = input("Enter amount you want to invest: ")
+yrs = input("Enter the number of years: ")
+percent_of_interest(amt, yrs)
 
 
 # secret_num = 25
